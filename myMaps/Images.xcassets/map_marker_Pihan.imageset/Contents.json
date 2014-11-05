@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "map_marker_Pihan@1X@1X.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "map_marker_Pihan拷貝266dpi@1X@2X.png"
     },
     {
       "idiom" : "universal",
