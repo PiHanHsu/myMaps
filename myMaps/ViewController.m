@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import <Foundation/Foundation.h>
 
 @interface ViewController ()
 
@@ -26,7 +27,12 @@
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
     self.view = mapView_;
-    
+    //searchBar
+    /*
+    UISearchBar* searchBar = [[UISearchBar alloc]initWithFrame:CGRectZero];
+    searchBar.frame = CGRectMake(0, 60, 100, searchBar.frame.size.height);
+    [mapView_ addSubview:searchBar];
+    */
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(25.023868, 121.528976);
