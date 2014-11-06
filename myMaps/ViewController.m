@@ -9,14 +9,21 @@
 #import "ViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <Foundation/Foundation.h>
+#import "GCGeocodingService.h"
+
 
 @interface ViewController ()
+
 
 @end
 
 @implementation ViewController{
     GMSMapView *mapView_;
 }
+
+@synthesize gs;
+@synthesize addressField;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,22 +32,58 @@
                                                             longitude:121.528976
                                                                  zoom:15];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView_.frame = CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height);
     mapView_.myLocationEnabled = YES;
-    self.view = mapView_;
-    //searchBar
-    /*
-    UISearchBar* searchBar = [[UISearchBar alloc]initWithFrame:CGRectZero];
-    searchBar.frame = CGRectMake(0, 60, 100, searchBar.frame.size.height);
-    [mapView_ addSubview:searchBar];
-    */
+
+      [self.view insertSubview:mapView_ atIndex:0];
+    
     // Creates a marker in the center of the map.
+    /*
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(25.023868, 121.528976);
     marker.title = @"Pasta Paradise";
     marker.snippet = @"Good restaurant!!";
     marker.icon =[UIImage imageNamed:@"map_marker_Pihan"];
     marker.map = mapView_;
+    */
+    gs = [[GCGeocodingService alloc] init];
+
 }
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+}
+
+- (IBAction)geocode:(id)sender {
+    [addressField resignFirstResponder];
+    [gs geocodeAddress:addressField.text];
+    [self addMarker];
+    NSLog(@"text: %@", addressField.text);
+    NSLog(@"%@", gs);
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)addMarker{
+    double lat = [[gs.geocode objectForKey:@"lat"] doubleValue];
+    double lng = [[gs.geocode objectForKey:@"lng"] doubleValue];
+    GMSMarker *options = [[GMSMarker alloc] init];
+    options.position = CLLocationCoordinate2DMake(lat, lng);
+    options.title = [gs.geocode objectForKey:@"address"];
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat                                                                longitude:lng                                                        zoom:10];
+    NSLog(@" %f, %f",lat, lng);
+    
+    [mapView_ setCamera:camera];
+    //[mapView addMarkerWithOptions:options];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

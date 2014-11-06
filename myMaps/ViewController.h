@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GCGeocodingService.h"
 
-@interface ViewController : UIViewController
 
+@interface ViewController : UIViewController<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *button;
+
+@property (weak, nonatomic) IBOutlet UITextField * addressField;
+- (IBAction)geocode:(id)sender;
+- (void)addMarker;
+
+@property (strong,nonatomic) GCGeocodingService *gs;
 
 @end
 

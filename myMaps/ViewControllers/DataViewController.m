@@ -14,6 +14,15 @@
 
 @implementation DataViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    
+    
+}
+
+
+
 - (IBAction)getDataButtonPressed:(id)sender {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kOpenDataRestaurantAPI] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
     

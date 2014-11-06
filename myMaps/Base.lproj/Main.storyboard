@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Osb-jV-dcy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,7 +16,36 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="44" searchBarStyle="prominent" text="" placeholder="Search Place" translatesAutoresizingMaskIntoConstraints="NO" id="rsl-IX-RAd">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5zd-5W-jgz">
+                                <rect key="frame" x="21" y="113" width="204" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xn2-Kk-XI7">
+                                <rect key="frame" x="249" y="112" width="48" height="30"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="geocode:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1aU-b6-0Fq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rsl-IX-RAd" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="64" id="BEy-Pj-627"/>
+                            <constraint firstItem="rsl-IX-RAd" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="brS-KW-TxK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rsl-IX-RAd" secondAttribute="trailing" constant="-16" id="z8b-vz-vGj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cs9-r9-XL5">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="u65-pk-f6e">
@@ -24,10 +54,53 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressField" destination="5zd-5W-jgz" id="4n6-Gv-swN"/>
+                        <outlet property="button" destination="Xn2-Kk-XI7" id="aTo-zh-qhb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="128"/>
+            <point key="canvasLocation" x="627" y="117"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Piw-WQ-0BP">
+            <objects>
+                <viewController id="mfx-2Z-48i" customClass="GCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MHs-mz-OUu"/>
+                        <viewControllerLayoutGuide type="bottom" id="xg6-j1-yNY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T7K-v2-nWd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Jy-PH-2be">
+                                <rect key="frame" x="16" y="72" width="175" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd4-Na-u0W">
+                                <rect key="frame" x="213" y="72" width="79" height="30"/>
+                                <state key="normal" title="Test Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="geocode:" destination="mfx-2Z-48i" eventType="touchUpInside" id="JHc-9N-pxa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tg4-zg-ZJU"/>
+                    <connections>
+                        <outlet property="addressField" destination="0Jy-PH-2be" id="SD8-Cx-Xq4"/>
+                        <outlet property="button" destination="qd4-Na-u0W" id="cR2-ig-psw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3sd-YX-MiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="754"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="OHo-Z8-QsH">
@@ -42,7 +115,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yG-oo-7t6">
-                                <rect key="frame" x="97" y="104" width="130" height="30"/>
+                                <rect key="frame" x="157" y="454" width="130" height="30"/>
                                 <state key="normal" title="Get data from Web">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -50,14 +123,38 @@
                                     <action selector="getDataButtonPressed:" destination="Sr7-bT-IPz" eventType="touchUpInside" id="2Nh-Lc-wc8"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9z-EB-nBM">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Sr7-bT-IPz" id="UqC-Yh-hvC"/>
+                                </connections>
+                            </searchBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63b-jJ-prT">
+                                <rect key="frame" x="16" y="118" width="228" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="MdU-Ga-Yrv"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Hzo-AH-rb0" id="NOy-bS-dG2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a35-n2-Aln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Hzo-AH-rb0">
+                    <connections>
+                        <outlet property="delegate" destination="Sr7-bT-IPz" id="vxt-Tq-Vgh"/>
+                        <outlet property="searchBar" destination="A9z-EB-nBM" id="do2-Y4-QKa"/>
+                        <outlet property="searchContentsController" destination="Sr7-bT-IPz" id="7EO-Pf-pWN"/>
+                        <outlet property="searchResultsDataSource" destination="Sr7-bT-IPz" id="5SR-0C-jhA"/>
+                        <outlet property="searchResultsDelegate" destination="Sr7-bT-IPz" id="K1N-xt-xDp"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1454" y="106"/>
+            <point key="canvasLocation" x="986" y="117"/>
         </scene>
         <!--Loing View Controller-->
         <scene sceneID="wCd-oy-9jK">
@@ -80,6 +177,15 @@
                                     <action selector="loginButtonTouchHandler:" destination="Xnc-GH-83s" eventType="touchUpInside" id="5cK-mt-GYl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uu6-rB-T2Y">
+                                <rect key="frame" x="137" y="478" width="102" height="30"/>
+                                <state key="normal" title="Test Map page">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mfx-2Z-48i" kind="push" id="MB5-TM-8iL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -93,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RtJ-1d-LhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456" y="117"/>
+            <point key="canvasLocation" x="274" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VF0-CM-POp">
