@@ -24,17 +24,12 @@
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0.0
                  longitude:0.0                                                zoom:2];
     
-   
-    //mapView = [GMSMapView mapWithFrame:CGRectMake(0, 200, self.view.frame.size.width, self.view.frame.size.height) camera:camera];
-    
  [mapView setCamera:camera];
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    //[self.view insertSubview:mapView atIndex:0];
-    
     gs = [[GCGeocodingService alloc] init];
     
 }

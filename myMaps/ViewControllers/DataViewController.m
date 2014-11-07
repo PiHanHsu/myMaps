@@ -17,21 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
-    
 }
 
 
 
 - (IBAction)getDataButtonPressed:(id)sender {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kOpenDataRestaurantAPI] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
     
+    //臺北市政府資料平台
+    /*
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kOpenDataRestaurantAPI] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (!connectionError) {
             NSError *error = nil;
             NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
             if (!error) {
-                /*
+     
                 for (NSDictionary *eachItem in jsonArray) {
                     PFObject * restaurantData = [PFObject objectWithClassName:@"restaurantData"];
                     restaurantData[@"name"]=[eachItem objectForKey:@"name"];
@@ -44,7 +44,7 @@
                     restaurantData[@"Y"]=[eachItem objectForKey:@"Y"];
                     [restaurantData saveInBackground];
                     }
-                */
+     
             } else {
                 NSLog(@"Error with: %@", error);
             }
@@ -52,6 +52,7 @@
             NSLog(@"Connection with: %@", connectionError);
         }
     }];
+    */
     
     NSURLRequest *request2 = [NSURLRequest requestWithURL:[NSURL URLWithString:kOpenDataRestaurantNewTaipeiAPI] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60];
     
@@ -90,12 +91,6 @@
             NSLog(@"Connection with: %@", connectionError);
         }
     }];
-
-    
-    
-    
-    
-    
 }
 
 

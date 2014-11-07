@@ -10,5 +10,6 @@
 
 @interface LoingViewController : UIViewController
 @property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBarTextField;
 
 @end
