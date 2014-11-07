@@ -21,8 +21,8 @@
     // Override point for customization after application launch.
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [Parse setApplicationId:@"UmLJK3SNBj82YXzDX98D7U3DfExwFvl5i1yB3FBM"
-                  clientKey:@"zajBB5ORGv0UPHtjaIC6OUNKQu50p17XQPExEPVz"];
+    [Parse setApplicationId:@"yAGJoY4EsQ7b2jx4DvBw5wff2YChWRJAzeock7pv"
+                  clientKey:@"op3v3HrmPFTVMqBzV7WFMeUsIcuMK5sSLTJV1jvR"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [GMSServices provideAPIKey:@"AIzaSyCt1tGuzSRiPBdqxWDEE-CnpaT-rDhQw_w"];
     

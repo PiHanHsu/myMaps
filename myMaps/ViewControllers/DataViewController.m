@@ -8,17 +8,32 @@
 
 #import "DataViewController.h"
 #import <Parse/Parse.h>
+#import "GCGeocodingService.h"
 
 #define kOpenDataRestaurantAPI @"http://data.taipei.gov.tw/opendata/apply/json/MDY2RERBMTctQTE4Mi00OEU5LUI2M0YtRTg0NTQ1NUEzM0Mw"
 #define kOpenDataRestaurantNewTaipeiAPI @"http://data.ntpc.gov.tw/NTPC/od/data/api/1040400257/?$format=json"
 
 @implementation DataViewController
+@synthesize gs;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+     gs = [[GCGeocodingService alloc] init];
 }
 
+- (IBAction)addToParseButtonPressed:(id)sender {
+    
+     [gs geocodeAddress:self.addressTextField.text];
+    double lat = [[gs.geocode objectForKey:@"lat"] doubleValue];
+    double lng = [[gs.geocode objectForKey:@"lng"] doubleValue];
+    PFObject *object =[PFObject objectWithClassName:@"userRecommendData"];
+    object[@"name"]=self.nameTextField.text;
+    object[@"address"] =self.addressTextField.text;
+   
+    object[@"lat"] = [NSString stringWithFormat:@"%f", lat];
+    object[@"lng"] = [NSString stringWithFormat:@"%f", lng];
+    [object save];
+                  }
 
 
 - (IBAction)getDataButtonPressed:(id)sender {

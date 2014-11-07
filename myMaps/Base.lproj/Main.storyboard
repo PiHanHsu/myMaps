@@ -51,45 +51,6 @@
             </objects>
             <point key="canvasLocation" x="623" y="117"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Piw-WQ-0BP">
-            <objects>
-                <viewController id="mfx-2Z-48i" customClass="GCViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MHs-mz-OUu"/>
-                        <viewControllerLayoutGuide type="bottom" id="xg6-j1-yNY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T7K-v2-nWd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Jy-PH-2be">
-                                <rect key="frame" x="16" y="72" width="175" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd4-Na-u0W">
-                                <rect key="frame" x="213" y="72" width="79" height="30"/>
-                                <state key="normal" title="Test Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="geocode:" destination="mfx-2Z-48i" eventType="touchUpInside" id="JHc-9N-pxa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tg4-zg-ZJU"/>
-                    <connections>
-                        <outlet property="addressField" destination="0Jy-PH-2be" id="SD8-Cx-Xq4"/>
-                        <outlet property="button" destination="qd4-Na-u0W" id="cR2-ig-psw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3sd-YX-MiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="274" y="754"/>
-        </scene>
         <!--Data View Controller-->
         <scene sceneID="OHo-Z8-QsH">
             <objects>
@@ -103,23 +64,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yG-oo-7t6">
-                                <rect key="frame" x="157" y="454" width="130" height="30"/>
-                                <state key="normal" title="Get data from Web">
+                                <rect key="frame" x="50" y="518" width="288" height="30"/>
+                                <state key="normal" title="Test button Get data from Web">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="getDataButtonPressed:" destination="Sr7-bT-IPz" eventType="touchUpInside" id="2Nh-Lc-wc8"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9z-EB-nBM">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uo9-te-dTz">
+                                <rect key="frame" x="31" y="164" width="262" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U03-bF-a7E">
+                                <rect key="frame" x="31" y="223" width="102" height="30"/>
+                                <state key="normal" title="Add to Parse">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="Sr7-bT-IPz" id="UqC-Yh-hvC"/>
+                                    <action selector="addToParseButtonPressed:" destination="Sr7-bT-IPz" eventType="touchUpInside" id="jau-K4-oan"/>
                                 </connections>
-                            </searchBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="63b-jJ-prT">
-                                <rect key="frame" x="16" y="118" width="228" height="30"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eH2-I2-cWm">
+                                <rect key="frame" x="31" y="119" width="131" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -128,6 +96,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="MdU-Ga-Yrv"/>
                     <connections>
+                        <outlet property="addressTextField" destination="uo9-te-dTz" id="71J-OZ-90w"/>
+                        <outlet property="nameTextField" destination="eH2-I2-cWm" id="TlS-8I-TBQ"/>
                         <outlet property="searchDisplayController" destination="Hzo-AH-rb0" id="NOy-bS-dG2"/>
                     </connections>
                 </viewController>
@@ -135,7 +105,6 @@
                 <searchDisplayController id="Hzo-AH-rb0">
                     <connections>
                         <outlet property="delegate" destination="Sr7-bT-IPz" id="vxt-Tq-Vgh"/>
-                        <outlet property="searchBar" destination="A9z-EB-nBM" id="do2-Y4-QKa"/>
                         <outlet property="searchContentsController" destination="Sr7-bT-IPz" id="7EO-Pf-pWN"/>
                         <outlet property="searchResultsDataSource" destination="Sr7-bT-IPz" id="5SR-0C-jhA"/>
                         <outlet property="searchResultsDelegate" destination="Sr7-bT-IPz" id="K1N-xt-xDp"/>

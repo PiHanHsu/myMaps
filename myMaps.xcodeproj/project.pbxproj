@@ -18,7 +18,6 @@
 		E8B0C8E81A0A3AFA00118FD0 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8E71A0A3AFA00118FD0 /* DataViewController.m */; };
 		E8B0C8EB1A0A639300118FD0 /* LoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8EA1A0A639300118FD0 /* LoingViewController.m */; };
 		E8B0C8F11A0B5F9E00118FD0 /* GCGeocodingService.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8EE1A0B5F9E00118FD0 /* GCGeocodingService.m */; };
-		E8B0C8F21A0B5F9E00118FD0 /* GCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8F01A0B5F9E00118FD0 /* GCViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +53,6 @@
 		E8B0C8EA1A0A639300118FD0 /* LoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoingViewController.m; sourceTree = "<group>"; };
 		E8B0C8ED1A0B5F9E00118FD0 /* GCGeocodingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCGeocodingService.h; sourceTree = "<group>"; };
 		E8B0C8EE1A0B5F9E00118FD0 /* GCGeocodingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCGeocodingService.m; sourceTree = "<group>"; };
-		E8B0C8EF1A0B5F9E00118FD0 /* GCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCViewController.h; sourceTree = "<group>"; };
-		E8B0C8F01A0B5F9E00118FD0 /* GCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +177,6 @@
 			children = (
 				E8B0C8ED1A0B5F9E00118FD0 /* GCGeocodingService.h */,
 				E8B0C8EE1A0B5F9E00118FD0 /* GCGeocodingService.m */,
-				E8B0C8EF1A0B5F9E00118FD0 /* GCViewController.h */,
-				E8B0C8F01A0B5F9E00118FD0 /* GCViewController.m */,
 			);
 			name = Catogory;
 			sourceTree = "<group>";
@@ -246,6 +241,7 @@
 				TargetAttributes = {
 					E8B0C8B81A08E1BB00118FD0 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 8DCXL25R37;
 					};
 					E8B0C8D11A08E1BB00118FD0 = {
 						CreatedOnToolsVersion = 6.1;
@@ -331,7 +327,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8B0C8E81A0A3AFA00118FD0 /* DataViewController.m in Sources */,
-				E8B0C8F21A0B5F9E00118FD0 /* GCViewController.m in Sources */,
 				E8B0C8F11A0B5F9E00118FD0 /* GCGeocodingService.m in Sources */,
 				E8B0C8C51A08E1BB00118FD0 /* ViewController.m in Sources */,
 				E8B0C8C21A08E1BB00118FD0 /* AppDelegate.m in Sources */,
@@ -460,6 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = myMaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -471,6 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = myMaps/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

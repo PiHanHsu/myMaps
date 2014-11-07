@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "GCGeocodingService.h"
 
 @interface DataViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (strong,nonatomic) GCGeocodingService *gs;
 
 @end
