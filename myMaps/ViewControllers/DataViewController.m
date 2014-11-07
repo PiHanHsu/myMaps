@@ -34,6 +34,13 @@
     object[@"lng"] = [NSString stringWithFormat:@"%f", lng];
     [object save];
                   }
+- (IBAction)logoutButtonPressed:(id)sender {
+    // Logout user, this automatically clears the cache
+    [PFUser logOut];
+    
+    // Return to login view controller
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 - (IBAction)getDataButtonPressed:(id)sender {

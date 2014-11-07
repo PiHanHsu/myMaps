@@ -94,7 +94,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MdU-Ga-Yrv"/>
+                    <navigationItem key="navigationItem" id="MdU-Ga-Yrv">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="fJu-Dz-1BQ">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="Sr7-bT-IPz" id="J0X-sm-yYG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="uo9-te-dTz" id="71J-OZ-90w"/>
                         <outlet property="nameTextField" destination="eH2-I2-cWm" id="TlS-8I-TBQ"/>
@@ -125,9 +131,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIL-PM-BAf">
-                                <rect key="frame" x="89" y="269" width="143" height="30"/>
-                                <state key="normal" title="Login with Facebook">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to myMap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apm-Sm-4OW">
+                                <rect key="frame" x="72" y="97" width="177" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIL-PM-BAf">
+                                <rect key="frame" x="36" y="335" width="248" height="49"/>
+                                <state key="normal" title="Login with Facebook" image="Button-login-with-facebook.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -147,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RtJ-1d-LhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="117"/>
+            <point key="canvasLocation" x="299" y="169"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VF0-CM-POp">
@@ -169,6 +181,9 @@
             <point key="canvasLocation" x="-76" y="117"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button-login-with-facebook.png" width="354" height="69"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

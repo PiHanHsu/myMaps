@@ -25,6 +25,8 @@
                   clientKey:@"op3v3HrmPFTVMqBzV7WFMeUsIcuMK5sSLTJV1jvR"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [GMSServices provideAPIKey:@"AIzaSyCt1tGuzSRiPBdqxWDEE-CnpaT-rDhQw_w"];
+    [PFFacebookUtils initializeFacebook];
+
     
     //self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
     //self.window.backgroundColor = [UIColor whiteColor];
