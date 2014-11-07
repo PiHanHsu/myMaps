@@ -42,6 +42,28 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (IBAction)getDataFromParse:(id)sender {
+    PFQuery *query = [PFQuery queryWithClassName:@"userRecommendData"];
+    [query whereKey:@"userName" equalTo:@"Pihan"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object[@"lat"]);
+                NSLog(@"%@", object[@"lng"]);
+                
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    
+}
+
 
 - (IBAction)getDataButtonPressed:(id)sender {
     

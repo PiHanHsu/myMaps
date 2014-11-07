@@ -86,6 +86,15 @@
                                     <action selector="addToParseButtonPressed:" destination="Sr7-bT-IPz" eventType="touchUpInside" id="jau-K4-oan"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIE-er-3en">
+                                <rect key="frame" x="31" y="283" width="153" height="30"/>
+                                <state key="normal" title="Get places from Parse">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDataFromParse:" destination="Sr7-bT-IPz" eventType="touchUpInside" id="bQM-fN-Nmk"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eH2-I2-cWm">
                                 <rect key="frame" x="31" y="119" width="131" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

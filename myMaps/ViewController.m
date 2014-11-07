@@ -10,7 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <Foundation/Foundation.h>
 #import "GCGeocodingService.h"
-
+#import <Parse/Parse.h>
 
 @interface ViewController ()<
 UITextFieldDelegate
@@ -39,6 +39,33 @@ UITextFieldDelegate
     mapView_.myLocationEnabled = YES;
 
       [self.view insertSubview:mapView_ atIndex:0];
+    PFQuery *query = [PFQuery queryWithClassName:@"userRecommendData"];
+    [query whereKey:@"userName" equalTo:@"Pihan"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object[@"lat"]);
+                NSLog(@"%@", object[@"lng"]);
+                double lat = [object[@"lat"] doubleValue];
+                double lng = [object[@"lng"] doubleValue];
+                
+                GMSMarker * markers = [[GMSMarker alloc]init];
+                markers.position = CLLocationCoordinate2DMake(lat, lng);
+                markers.map = mapView_;
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+    
+    
+    
+    
     
     // Creates a marker in the center of the map.
 
