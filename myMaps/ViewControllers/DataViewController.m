@@ -9,6 +9,7 @@
 #import "DataViewController.h"
 #import <Parse/Parse.h>
 #import "GCGeocodingService.h"
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 #define kOpenDataRestaurantAPI @"http://data.taipei.gov.tw/opendata/apply/json/MDY2RERBMTctQTE4Mi00OEU5LUI2M0YtRTg0NTQ1NUEzM0Mw"
 #define kOpenDataRestaurantNewTaipeiAPI @"http://data.ntpc.gov.tw/NTPC/od/data/api/1040400257/?$format=json"
@@ -36,6 +37,7 @@
                   }
 - (IBAction)logoutButtonPressed:(id)sender {
     // Logout user, this automatically clears the cache
+    [[PFFacebookUtils session] closeAndClearTokenInformation];
     [PFUser logOut];
     
     // Return to login view controller

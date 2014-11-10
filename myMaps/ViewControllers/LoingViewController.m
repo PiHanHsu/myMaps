@@ -33,10 +33,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // Check if user is cached and linked to Facebook, if so, bypass login
-    //if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-      //  [self _presentUserDetailsViewControllerAnimated:NO];
-   // }
+    //Check if user is cached and linked to Facebook, if so, bypass login
+    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+    [self _presentUserDetailsViewControllerAnimated:NO];
+   }
 }
 
 
@@ -70,10 +70,10 @@
             } else {
                 NSLog(@"User with facebook logged in!");
                 NSLog(@" user info %@", user.description);
-                user.email=[PFUser currentUser][@"profile"][@"email"];
-                user[@"name"]=[PFUser currentUser][@"profile"][@"name"];
-                user[@"gender"]=[PFUser currentUser][@"profile"][@"gender"];
-                user[@"birthday"]=[PFUser currentUser][@"profile"][@"birthday"];
+                //user.email=[PFUser currentUser][@"profile"][@"email"];
+                //user[@"name"]=[PFUser currentUser][@"profile"][@"name"];
+                //user[@"gender"]=[PFUser currentUser][@"profile"][@"gender"];
+                //user[@"birthday"]=[PFUser currentUser][@"profile"][@"birthday"];
                 
                 
             }

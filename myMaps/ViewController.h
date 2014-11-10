@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "GCGeocodingService.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
-
-@interface ViewController : UIViewController<UITextFieldDelegate>
+@interface ViewController : UIViewController<UITextFieldDelegate, GMSMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *button;
 
 @property (weak, nonatomic) IBOutlet UITextField * addressField;
