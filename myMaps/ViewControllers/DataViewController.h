@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 @property (strong,nonatomic) GCGeocodingService *gs;
+@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 
 @end

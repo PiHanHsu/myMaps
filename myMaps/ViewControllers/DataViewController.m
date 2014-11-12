@@ -20,6 +20,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      gs = [[GCGeocodingService alloc] init];
+    
+    NSString *userProfilePhotoURLString = [PFUser currentUser][@"profile"][@"pictureURL"];
+    // Download the user's facebook profile picture
+    if (userProfilePhotoURLString) {
+        NSURL *pictureURL = [NSURL URLWithString:userProfilePhotoURLString];
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:pictureURL];
+        
+        [NSURLConnection sendAsynchronousRequest:urlRequest
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                   if (connectionError == nil && data != nil) {
+                                       self.headImageView.image = [UIImage imageWithData:data];
+                                       
+                                       // Add a nice corner radius to the image
+                                       self.headImageView.layer.cornerRadius = 8.0f;
+                                       self.headImageView.layer.masksToBounds = YES;
+                                   } else {
+                                       NSLog(@"Failed to load profile photo.");
+                                   }
+                               }];
+    }
+
+    
+    
 }
 
 - (IBAction)addToParseButtonPressed:(id)sender {

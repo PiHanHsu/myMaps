@@ -38,7 +38,8 @@ UITextFieldDelegate
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.frame = CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height);
     mapView_.myLocationEnabled = YES;
-
+    mapView_.delegate = self;
+    
       [self.view insertSubview:mapView_ atIndex:0];
     PFQuery *query = [PFQuery queryWithClassName:@"userRecommendData"];
     [query whereKey:@"userName" equalTo:@"Pihan"];
@@ -63,7 +64,7 @@ UITextFieldDelegate
         }
     }];
     // Creates a marker in the center of the map.
-    
+    /*
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(25.023868, 121.528976);
     //marker.title = @"Pasta Paradise";
@@ -71,7 +72,7 @@ UITextFieldDelegate
     marker.icon =[UIImage imageNamed:@"map_marker_Pihan"];
     marker.appearAnimation = kGMSMarkerAnimationPop;
     marker.map = mapView_;
-    
+    */
     
     gs = [[GCGeocodingService alloc] init];
     self.addressField.delegate = self;
@@ -189,12 +190,25 @@ UITextFieldDelegate
     options.map=mapView_;
     
 }
+
+- (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
+{
+    CGPoint point = [mapView.projection pointForCoordinate:marker.position];
+    point.y = point.y - 100;
+    GMSCameraUpdate *camera =
+    [GMSCameraUpdate setTarget:[mapView.projection coordinateForPoint:point]];
+    [mapView animateWithCameraUpdate:camera];
+    
+    mapView.selectedMarker = marker;
+    return YES;
+}
 - (UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker {
     
     CustomInfoWindow *view =  [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
     view.nameLabel.text = @"Pasta";
     return view;
 }
+
 
 
 

@@ -73,12 +73,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uo9-te-dTz">
-                                <rect key="frame" x="31" y="164" width="262" height="30"/>
+                                <rect key="frame" x="31" y="251" width="262" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U03-bF-a7E">
-                                <rect key="frame" x="31" y="223" width="102" height="30"/>
+                                <rect key="frame" x="31" y="299" width="102" height="30"/>
                                 <state key="normal" title="Add to Parse">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -87,7 +87,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIE-er-3en">
-                                <rect key="frame" x="31" y="283" width="153" height="30"/>
+                                <rect key="frame" x="31" y="343" width="153" height="30"/>
                                 <state key="normal" title="Get places from Parse">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -96,10 +96,13 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eH2-I2-cWm">
-                                <rect key="frame" x="31" y="119" width="131" height="30"/>
+                                <rect key="frame" x="31" y="197" width="131" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UpD-xV-LLC">
+                                <rect key="frame" x="31" y="78" width="100" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -112,6 +115,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="uo9-te-dTz" id="71J-OZ-90w"/>
+                        <outlet property="headImageView" destination="UpD-xV-LLC" id="RYb-u3-DNH"/>
                         <outlet property="nameTextField" destination="eH2-I2-cWm" id="TlS-8I-TBQ"/>
                         <outlet property="searchDisplayController" destination="Hzo-AH-rb0" id="NOy-bS-dG2"/>
                     </connections>
