@@ -5,7 +5,26 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Add-->
+        <scene sceneID="bMl-Qd-Xas">
+            <objects>
+                <viewController id="336-8V-tNK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AqN-qb-cH7"/>
+                        <viewControllerLayoutGuide type="bottom" id="P2L-K4-iLf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OgR-ME-YNy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add" id="mbP-cm-4qg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZM5-Ul-g5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="-507"/>
+        </scene>
+        <!--Search-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -35,12 +54,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" id="tia-Nd-A2q"/>
                     <navigationItem key="navigationItem" id="cs9-r9-XL5">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="u65-pk-f6e">
-                            <connections>
-                                <segue destination="Sr7-bT-IPz" kind="push" id="eCU-MC-8el"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="u65-pk-f6e"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addressField" destination="5zd-5W-jgz" id="4n6-Gv-swN"/>
@@ -49,9 +65,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="117"/>
+            <point key="canvasLocation" x="1079" y="117"/>
         </scene>
-        <!--Data View Controller-->
+        <!--Profile-->
         <scene sceneID="OHo-Z8-QsH">
             <objects>
                 <viewController id="Sr7-bT-IPz" customClass="DataViewController" sceneMemberID="viewController">
@@ -63,15 +79,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yG-oo-7t6">
-                                <rect key="frame" x="50" y="518" width="288" height="30"/>
-                                <state key="normal" title="Test button Get data from Web">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getDataButtonPressed:" destination="Sr7-bT-IPz" eventType="touchUpInside" id="2Nh-Lc-wc8"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uo9-te-dTz">
                                 <rect key="frame" x="31" y="251" width="262" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -103,11 +110,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UpD-xV-LLC">
                                 <rect key="frame" x="31" y="78" width="100" height="100"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yG-oo-7t6">
+                                <rect key="frame" x="52" y="470" width="288" height="30"/>
+                                <state key="normal" title="Test button Get data from Web">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDataButtonPressed:" destination="Sr7-bT-IPz" eventType="touchUpInside" id="2Nh-Lc-wc8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="pVg-ce-oVt"/>
                     <navigationItem key="navigationItem" id="MdU-Ga-Yrv">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="fJu-Dz-1BQ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="fJu-Dz-1BQ">
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="Sr7-bT-IPz" id="J0X-sm-yYG"/>
                             </connections>
@@ -130,7 +147,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="986" y="117"/>
+            <point key="canvasLocation" x="1000" y="833"/>
         </scene>
         <!--Loing View Controller-->
         <scene sceneID="wCd-oy-9jK">
@@ -165,14 +182,14 @@
                     <navigationItem key="navigationItem" id="9hb-XJ-yiQ">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="zKb-rK-qXX">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="push" id="lLt-HS-o9R"/>
+                                <segue destination="4re-ng-NJG" kind="push" id="lLt-HS-o9R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RtJ-1d-LhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="299" y="169"/>
+            <point key="canvasLocation" x="286" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VF0-CM-POp">
@@ -191,7 +208,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="poB-Jz-by4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-76" y="117"/>
+            <point key="canvasLocation" x="-122" y="117"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vqz-Dz-zhJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4re-ng-NJG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Krb-19-gKN"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="XK3-NK-DGR">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="336-8V-tNK" kind="relationship" relationship="viewControllers" id="wmc-cP-XVg"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="yn2-Me-mbx"/>
+                        <segue destination="Sr7-bT-IPz" kind="relationship" relationship="viewControllers" id="YSU-GD-mZ2"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzq-Dx-oQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="117"/>
         </scene>
     </scenes>
     <resources>

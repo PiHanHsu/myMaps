@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "ViewController.h"
+
 
 @implementation LoingViewController
 
@@ -35,7 +37,7 @@
     
     //Check if user is cached and linked to Facebook, if so, bypass login
     if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-    [self _presentUserDetailsViewControllerAnimated:NO];
+    [self _ViewControllerAnimated:NO];
    }
 }
 
@@ -77,7 +79,7 @@
                 
                 
             }
-            [self _presentUserDetailsViewControllerAnimated:YES];
+            [self _ViewControllerAnimated:YES];
         }
     }];
     
@@ -87,9 +89,9 @@
 #pragma mark -
 #pragma mark UserDetailsViewController
 
-- (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
-    //UserDetailsViewController *detailsViewController = [[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    //[self.navigationController pushViewController:detailsViewController animated:animated];
+- (void)_ViewControllerAnimated:(BOOL)animated {
+    //ViewController *searchViewController = [[ViewController alloc] init ];
+    //[self.navigationController pushViewController:searchViewController animated:animated];
 }
 
 @end
