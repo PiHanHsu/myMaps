@@ -18,4 +18,18 @@
 }
 */
 
+
+
+
+- (IBAction)likeButtonPressed:(id)sender {
+    
+     self.displayLikeLabel.text =@"Like!";
+    NSLog(@"Pressed");
+    
+    
+}
+
+- (IBAction)statButtonPressed:(id)sender {
+    self.starButton.tintColor = [UIColor redColor];
+}
 @end

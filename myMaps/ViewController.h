@@ -13,6 +13,7 @@
 
 @interface ViewController : UIViewController<UITextFieldDelegate, GMSMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *button;
+@property (weak, nonatomic) IBOutlet UILabel *displayTapMarkerLabel;
 
 @property (weak, nonatomic) IBOutlet UITextField * addressField;
 - (IBAction)geocode:(id)sender;

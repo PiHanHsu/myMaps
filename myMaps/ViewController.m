@@ -77,7 +77,7 @@ UITextFieldDelegate
     
     gs = [[GCGeocodingService alloc] init];
     self.addressField.delegate = self;
-    
+    //[self.displayTapMarkerLabel addSubview:mapView_];
     [self _loadData];
     
 }
@@ -192,23 +192,60 @@ UITextFieldDelegate
     
 }
 
+
+
 - (BOOL)mapView:(GMSMapView *)mapView didTapMarker:(GMSMarker *)marker
 {
     CGPoint point = [mapView.projection pointForCoordinate:marker.position];
-    point.y = point.y - 100;
+    point.y = point.y - 120;
     GMSCameraUpdate *camera =
     [GMSCameraUpdate setTarget:[mapView.projection coordinateForPoint:point]];
     [mapView animateWithCameraUpdate:camera];
     
     mapView.selectedMarker = marker;
+    //self.displayTapMarkerLabel.text= @"Marker Tapped!!";
+    
+    CustomInfoWindow *view =  [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    view.nameLabel.text = @"Pasta";
+    
+    view.center = self.view.center;
+    
+
+    [mapView_ addSubview:view];
+    
+    
+    //AlertView
+    /*
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle: @"Hello"
+                                  message:Nil
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    CGPoint center =CGPointMake(160, 250);
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                                                    }];
+    
+    [alert addAction:ok];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+*/
+    
+    
     return YES;
 }
+
+/*
 - (UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker {
-    
     CustomInfoWindow *view =  [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
     view.nameLabel.text = @"Pasta";
     return view;
 }
+*/
 
 
 

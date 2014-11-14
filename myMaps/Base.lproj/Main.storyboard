@@ -8,7 +8,7 @@
         <!--Add-->
         <scene sceneID="bMl-Qd-Xas">
             <objects>
-                <viewController id="336-8V-tNK" sceneMemberID="viewController">
+                <viewController id="336-8V-tNK" customClass="AddItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AqN-qb-cH7"/>
                         <viewControllerLayoutGuide type="bottom" id="P2L-K4-iLf"/>
@@ -16,6 +16,17 @@
                     <view key="view" contentMode="scaleToFill" id="OgR-ME-YNy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAT-or-tYN">
+                                <rect key="frame" x="98" y="88" width="124" height="30"/>
+                                <state key="normal" title="Show infoWindow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showInforPressed:" destination="336-8V-tNK" eventType="touchUpInside" id="gy7-Rk-dSr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" id="mbP-cm-4qg"/>
@@ -51,6 +62,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQq-OF-gKd" userLabel="DisplayLabel">
+                                <rect key="frame" x="16" y="95" width="197" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -61,11 +78,12 @@
                     <connections>
                         <outlet property="addressField" destination="5zd-5W-jgz" id="4n6-Gv-swN"/>
                         <outlet property="button" destination="Xn2-Kk-XI7" id="aTo-zh-qhb"/>
+                        <outlet property="displayTapMarkerLabel" destination="YQq-OF-gKd" id="uGn-63-bcw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1079" y="117"/>
+            <point key="canvasLocation" x="1079" y="123"/>
         </scene>
         <!--Profile-->
         <scene sceneID="OHo-Z8-QsH">

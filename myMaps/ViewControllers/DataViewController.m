@@ -34,7 +34,7 @@
                                        self.headImageView.image = [UIImage imageWithData:data];
                                        
                                        // Add a nice corner radius to the image
-                                       self.headImageView.layer.cornerRadius = 8.0f;
+                                       self.headImageView.layer.cornerRadius = 50.0f;
                                        self.headImageView.layer.masksToBounds = YES;
                                    } else {
                                        NSLog(@"Failed to load profile photo.");

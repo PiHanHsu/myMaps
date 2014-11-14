@@ -11,8 +11,12 @@
 @interface CustomInfoWindow : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *restaurantImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *likeButton;
-@property (weak, nonatomic) IBOutlet UIImageView *commentButton;
 @property (weak, nonatomic) IBOutlet UIButton *starButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *commentButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *displayLikeLabel;
+- (IBAction)likeButtonPressed:(id)sender;
+- (IBAction)statButtonPressed:(id)sender;
 
 @end

@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8278E687C1A404C3240343EC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 776E60380E295A56479C57B5 /* libPods.a */; };
+		E85DD3F11A14B57C005CE16C /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85DD3F01A14B57C005CE16C /* AddItemViewController.m */; };
 		E879A4541A0CB771006B8DC8 /* Button-login-with-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = E879A4531A0CB771006B8DC8 /* Button-login-with-facebook.png */; };
 		E879A4881A1095A4006B8DC8 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E879A4871A1095A4006B8DC8 /* InfoWindow.xib */; };
 		E879A48A1A109855006B8DC8 /* infoWindow.png in Resources */ = {isa = PBXBuildFile; fileRef = E879A4891A109855006B8DC8 /* infoWindow.png */; };
 		E879A48E1A109A62006B8DC8 /* restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = E879A48D1A109A62006B8DC8 /* restaurant.png */; };
 		E879A4941A109C14006B8DC8 /* CustomInfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E879A4931A109C14006B8DC8 /* CustomInfoWindow.m */; };
+		E8985A511A16014E004845DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E8985A501A16014E004845DF /* User.m */; };
+		E8985A541A160176004845DF /* Friends.m in Sources */ = {isa = PBXBuildFile; fileRef = E8985A531A160176004845DF /* Friends.m */; };
+		E8985A571A160186004845DF /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = E8985A561A160186004845DF /* Restaurants.m */; };
 		E8B0C8BF1A08E1BB00118FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8BE1A08E1BB00118FD0 /* main.m */; };
 		E8B0C8C21A08E1BB00118FD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8C11A08E1BB00118FD0 /* AppDelegate.m */; };
 		E8B0C8C51A08E1BB00118FD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8C41A08E1BB00118FD0 /* ViewController.m */; };
@@ -39,12 +43,20 @@
 		776E60380E295A56479C57B5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		937F2AE13D7259F5F265A268 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C865DD10403D023306E42EB1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E85DD3EF1A14B57C005CE16C /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		E85DD3F01A14B57C005CE16C /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 		E879A4531A0CB771006B8DC8 /* Button-login-with-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Button-login-with-facebook.png"; sourceTree = "<group>"; };
 		E879A4871A1095A4006B8DC8 /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
 		E879A4891A109855006B8DC8 /* infoWindow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = infoWindow.png; sourceTree = "<group>"; };
 		E879A48D1A109A62006B8DC8 /* restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant.png; sourceTree = "<group>"; };
 		E879A4921A109C14006B8DC8 /* CustomInfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomInfoWindow.h; sourceTree = SOURCE_ROOT; };
 		E879A4931A109C14006B8DC8 /* CustomInfoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomInfoWindow.m; sourceTree = SOURCE_ROOT; };
+		E8985A4F1A16014E004845DF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		E8985A501A16014E004845DF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		E8985A521A160176004845DF /* Friends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friends.h; sourceTree = "<group>"; };
+		E8985A531A160176004845DF /* Friends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friends.m; sourceTree = "<group>"; };
+		E8985A551A160186004845DF /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurants.h; sourceTree = "<group>"; };
+		E8985A561A160186004845DF /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurants.m; sourceTree = "<group>"; };
 		E8B0C8B91A08E1BB00118FD0 /* myMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B0C8BD1A08E1BB00118FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8B0C8BE1A08E1BB00118FD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +105,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E8985A4E1A160125004845DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8985A4F1A16014E004845DF /* User.h */,
+				E8985A501A16014E004845DF /* User.m */,
+				E8985A521A160176004845DF /* Friends.h */,
+				E8985A531A160176004845DF /* Friends.m */,
+				E8985A551A160186004845DF /* Restaurants.h */,
+				E8985A561A160186004845DF /* Restaurants.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		E8B0C8B01A08E1BB00118FD0 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +142,7 @@
 		E8B0C8BB1A08E1BB00118FD0 /* myMaps */ = {
 			isa = PBXGroup;
 			children = (
+				E8985A4E1A160125004845DF /* Models */,
 				E8B0C8EC1A0B5F7200118FD0 /* Catogory */,
 				E8B0C8C61A08E1BB00118FD0 /* Main.storyboard */,
 				E8B0C8E41A0A35A600118FD0 /* Views */,
@@ -169,6 +195,8 @@
 				E8B0C8E71A0A3AFA00118FD0 /* DataViewController.m */,
 				E8B0C8E91A0A639300118FD0 /* LoingViewController.h */,
 				E8B0C8EA1A0A639300118FD0 /* LoingViewController.m */,
+				E85DD3EF1A14B57C005CE16C /* AddItemViewController.h */,
+				E85DD3F01A14B57C005CE16C /* AddItemViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -348,10 +376,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8B0C8E81A0A3AFA00118FD0 /* DataViewController.m in Sources */,
+				E85DD3F11A14B57C005CE16C /* AddItemViewController.m in Sources */,
+				E8985A511A16014E004845DF /* User.m in Sources */,
+				E8985A541A160176004845DF /* Friends.m in Sources */,
 				E8B0C8F11A0B5F9E00118FD0 /* GCGeocodingService.m in Sources */,
 				E879A4941A109C14006B8DC8 /* CustomInfoWindow.m in Sources */,
 				E8B0C8C51A08E1BB00118FD0 /* ViewController.m in Sources */,
 				E8B0C8C21A08E1BB00118FD0 /* AppDelegate.m in Sources */,
+				E8985A571A160186004845DF /* Restaurants.m in Sources */,
 				E8B0C8BF1A08E1BB00118FD0 /* main.m in Sources */,
 				E8B0C8EB1A0A639300118FD0 /* LoingViewController.m in Sources */,
 			);
