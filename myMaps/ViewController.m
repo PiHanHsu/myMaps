@@ -11,12 +11,15 @@
 #import "GCGeocodingService.h"
 #import <Parse/Parse.h>
 #import "CustomInfoWindow.h"
+#import "CustomMarker.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface ViewController ()<
 UITextFieldDelegate
 >
-
-
+#define kGOOGLE_API_KEY @"AIzaSyB2dmM_xyWUz0ONLMi3BIik0yIMZJl8yII"
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+@property CLLocationManager *locationManager;
 
 @end
 
@@ -43,7 +46,7 @@ UITextFieldDelegate
     
       [self.view insertSubview:mapView_ atIndex:0];
     PFQuery *query = [PFQuery queryWithClassName:@"userRecommendData"];
-    [query whereKey:@"userName" equalTo:@"Pihan"];
+    [query whereKey:@"userName" equalTo:@"PiHan Hsu"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
@@ -57,6 +60,16 @@ UITextFieldDelegate
                 
                 GMSMarker * markers = [[GMSMarker alloc]init];
                 markers.position = CLLocationCoordinate2DMake(lat, lng);
+                
+                // load image from parse
+                /*
+                PFUser *currentUser = [PFUser currentUser];
+                PFFile *imageFile =currentUser[@"FBHeadImage"];
+                NSData *imagedata = [imageFile getData];
+                markers.icon =[UIImage imageWithData:imagedata];
+                */
+                
+
                 markers.map = mapView_;
             }
         } else {
@@ -79,6 +92,15 @@ UITextFieldDelegate
     self.addressField.delegate = self;
     //[self.displayTapMarkerLabel addSubview:mapView_];
     [self _loadData];
+
+    //try to query from Google Places, but didn;t work with API key and can't get current location
+    //    [self queryGooglePlaces:@"food"];
+//    
+//    self.locationManager = [[CLLocationManager alloc] init];
+//    self.locationManager.distanceFilter = kCLDistanceFilterNone; // whenever we move
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+//    [self.locationManager startUpdatingLocation];
+//    NSLog(@"lat: %f, lng: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.latitude);
     
 }
 
@@ -154,6 +176,18 @@ UITextFieldDelegate
             NSLog(@"Some other error: %@", error);
         }
     }];
+    
+    FBRequest* friendsRequest = [FBRequest requestForMyFriends];
+    [friendsRequest startWithCompletionHandler: ^(FBRequestConnection *connection,
+                                                  NSDictionary* result,
+                                                  NSError *error) {
+        NSArray* friends = [result objectForKey:@"data"];
+        NSLog(@"Found: %lu friends", (unsigned long)friends.count);
+        for (NSDictionary<FBGraphUser>* friend in friends) {
+            NSLog(@"I have a friend named %@ with id %@", friend.name, friend.objectID);
+        }
+    }];
+    
 }
 
 
@@ -187,6 +221,7 @@ UITextFieldDelegate
     options.appearAnimation= kGMSMarkerAnimationPop;
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat                                                                longitude:lng                                                        zoom:10];
     //NSLog(@" %f, %f",lat, lng);
+    
     [mapView_ setCamera:camera];
     options.map=mapView_;
     
@@ -248,7 +283,39 @@ UITextFieldDelegate
 */
 
 
+//try to query from Google Places, but didn;t work with API key and can't get current location
+-(void) queryGooglePlaces: (NSString *) googleType {
+    // Build the url string to send to Google. NOTE: The kGOOGLE_API_KEY is a constant that should contain your own API key that you obtain from Google. See this link for more info:
+    // https://developers.google.com/maps/documentation/places/#Authentication
+    NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/search/json?location=%f,%f&radius=%@&types=%@&sensor=true&key=%@", 25.023868, 121.528976, [NSString stringWithFormat:@"%i", 100], googleType, kGOOGLE_API_KEY];
+//    NSLog(@"lat: %f, lng: %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.latitude);
+    
+    //Formulate the string as a URL object.
+    NSURL *googleRequestURL=[NSURL URLWithString:url];
+    
+    // Retrieve the results of the URL.
+    dispatch_async(kBgQueue, ^{
+        NSData* data = [NSData dataWithContentsOfURL: googleRequestURL];
+        [self performSelectorOnMainThread:@selector(fetchedData:) withObject:data waitUntilDone:YES];
+    });
+}
 
+-(void)fetchedData:(NSData *)responseData {
+    //parse out the json data
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization
+                          JSONObjectWithData:responseData
+                          
+                          options:kNilOptions
+                          error:&error];
+    // can't get anything due to API issue
+    NSLog(@"JSON: %@", json);
+    //The results from Google will be an array obtained from the NSDictionary object with the key "results".
+    NSArray* places = [json objectForKey:@"results"];
+    
+    //Write out the data to the console.
+    NSLog(@"Google Data: %@", places);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -1,0 +1,48 @@
+PODS:
+  - AFNetworking (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Bolts (1.1.3)
+  - Facebook-iOS-SDK (3.20.0):
+    - Bolts (~> 1.0)
+  - Google-Maps-iOS-SDK (1.8.1)
+  - Parse (1.4.2):
+    - Bolts (~> 1.1.3)
+  - ParseFacebookUtils (1.4.2):
+    - Facebook-iOS-SDK (~> 3.19.0)
+    - Parse (~> 1.4.2)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0)
+  - Facebook-iOS-SDK (~> 3.20.0)
+  - Google-Maps-iOS-SDK (~> 1.8.1)
+  - Parse (~> 1.4.2)
+  - ParseFacebookUtils (~> 1.4.2)
+
+SPEC CHECKSUMS:
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Facebook-iOS-SDK: 5854404b4b651f612a8ef79ca06d766858f4cb8e
+  Google-Maps-iOS-SDK: 4fe35d952dbd1e4dacfcfa178e9cce2f06d67ecc
+  Parse: fc9ceb6edbc6bb6a1a1f3c33f0db3293a6894f94
+  ParseFacebookUtils: 15b04623e6bf4bbea5d60460caff98943ad7351e
+
+COCOAPODS: 0.34.4

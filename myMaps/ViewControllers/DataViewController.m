@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import "GCGeocodingService.h"
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "CustomMarker.h"
+#import "CustomInfoWindow.h"
 
 #define kOpenDataRestaurantAPI @"http://data.taipei.gov.tw/opendata/apply/json/MDY2RERBMTctQTE4Mi00OEU5LUI2M0YtRTg0NTQ1NUEzM0Mw"
 #define kOpenDataRestaurantNewTaipeiAPI @"http://data.ntpc.gov.tw/NTPC/od/data/api/1040400257/?$format=json"
@@ -31,11 +33,30 @@
                                            queue:[NSOperationQueue mainQueue]
                                completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
                                    if (connectionError == nil && data != nil) {
-                                       self.headImageView.image = [UIImage imageWithData:data];
                                        
+                                       self.headImageView.image = [UIImage imageWithData:data];
                                        // Add a nice corner radius to the image
                                        self.headImageView.layer.cornerRadius = 50.0f;
                                        self.headImageView.layer.masksToBounds = YES;
+                                       
+                                       
+                                       //Try to put the head to customMarker, not work yet!
+                                       
+                                       /*
+                                       CustomMarker *userMarker = [CustomMarker customView] ;
+                                       userMarker.markerView.image= [UIImage imageWithData:data];
+                                       self.headImageView.image =userMarker.markerImage;
+                                       */
+                                      
+                                       //Save FB image to Parse. Done!
+                                       /*
+                                       NSData *imageData = UIImageJPEGRepresentation(userMarker.markerImage, 0);
+                                       PFFile *imageFile = [PFFile fileWithName:@"userMarker.png" data:imageData];
+                                       PFUser *currentUser =[PFUser currentUser];
+                                       currentUser[@"userMarker"] =imageFile;
+                                       [currentUser saveInBackground];
+                                       */
+                                       
                                    } else {
                                        NSLog(@"Failed to load profile photo.");
                                    }
@@ -69,16 +90,26 @@
 }
 
 - (IBAction)getDataFromParse:(id)sender {
-    PFQuery *query = [PFQuery queryWithClassName:@"userRecommendData"];
-    [query whereKey:@"userName" equalTo:@"Pihan"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Restaurant"];
+    //[query whereKey:@"userName" equalTo:@"Pihan"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
+            NSLog(@"Successfully retrieved %lu objects", (unsigned long)objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                NSLog(@"%@", object[@"lat"]);
-                NSLog(@"%@", object[@"lng"]);
+                NSString *address = [[NSString alloc]init];
+                address =[object objectForKey:@"Address"] ;
+                NSLog(@"address: %@", address);
+                
+                [gs geocodeAddress:address];
+                double lat = [[gs.geocode objectForKey:@"lat"] doubleValue];
+                double lng = [[gs.geocode objectForKey:@"lng"] doubleValue];
+                //PFObject *object =[PFObject objectWithClassName:@"test"];
+                
+                object[@"lat"] = [NSString stringWithFormat:@"%f", lat];
+                object[@"lng"] = [NSString stringWithFormat:@"%f", lng];
+                [object saveInBackground];
                 
             }
         } else {

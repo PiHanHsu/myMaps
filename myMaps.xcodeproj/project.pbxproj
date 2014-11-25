@@ -17,6 +17,8 @@
 		E8985A511A16014E004845DF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E8985A501A16014E004845DF /* User.m */; };
 		E8985A541A160176004845DF /* Friends.m in Sources */ = {isa = PBXBuildFile; fileRef = E8985A531A160176004845DF /* Friends.m */; };
 		E8985A571A160186004845DF /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = E8985A561A160186004845DF /* Restaurants.m */; };
+		E8985A5A1A160985004845DF /* CustomMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = E8985A591A160985004845DF /* CustomMarker.m */; };
+		E8985A5C1A1609C4004845DF /* CustomMarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8985A5B1A1609C4004845DF /* CustomMarkerView.xib */; };
 		E8B0C8BF1A08E1BB00118FD0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8BE1A08E1BB00118FD0 /* main.m */; };
 		E8B0C8C21A08E1BB00118FD0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8C11A08E1BB00118FD0 /* AppDelegate.m */; };
 		E8B0C8C51A08E1BB00118FD0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B0C8C41A08E1BB00118FD0 /* ViewController.m */; };
@@ -57,6 +59,9 @@
 		E8985A531A160176004845DF /* Friends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friends.m; sourceTree = "<group>"; };
 		E8985A551A160186004845DF /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurants.h; sourceTree = "<group>"; };
 		E8985A561A160186004845DF /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurants.m; sourceTree = "<group>"; };
+		E8985A581A160985004845DF /* CustomMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomMarker.h; path = myMaps/CustomMarker.h; sourceTree = SOURCE_ROOT; };
+		E8985A591A160985004845DF /* CustomMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomMarker.m; path = myMaps/CustomMarker.m; sourceTree = SOURCE_ROOT; };
+		E8985A5B1A1609C4004845DF /* CustomMarkerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomMarkerView.xib; sourceTree = "<group>"; };
 		E8B0C8B91A08E1BB00118FD0 /* myMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B0C8BD1A08E1BB00118FD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8B0C8BE1A08E1BB00118FD0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		E8B0C8B01A08E1BB00118FD0 = {
 			isa = PBXGroup;
 			children = (
+				E8985A5B1A1609C4004845DF /* CustomMarkerView.xib */,
 				E879A4871A1095A4006B8DC8 /* InfoWindow.xib */,
 				E8B0C8BB1A08E1BB00118FD0 /* myMaps */,
 				E8B0C8D51A08E1BB00118FD0 /* myMapsTests */,
@@ -213,6 +219,8 @@
 			children = (
 				E879A4921A109C14006B8DC8 /* CustomInfoWindow.h */,
 				E879A4931A109C14006B8DC8 /* CustomInfoWindow.m */,
+				E8985A581A160985004845DF /* CustomMarker.h */,
+				E8985A591A160985004845DF /* CustomMarker.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +331,7 @@
 				E879A48E1A109A62006B8DC8 /* restaurant.png in Resources */,
 				E8B0C8CD1A08E1BB00118FD0 /* LaunchScreen.xib in Resources */,
 				E879A48A1A109855006B8DC8 /* infoWindow.png in Resources */,
+				E8985A5C1A1609C4004845DF /* CustomMarkerView.xib in Resources */,
 				E8B0C8CA1A08E1BB00118FD0 /* Images.xcassets in Resources */,
 				E879A4541A0CB771006B8DC8 /* Button-login-with-facebook.png in Resources */,
 			);
@@ -381,6 +390,7 @@
 				E8985A541A160176004845DF /* Friends.m in Sources */,
 				E8B0C8F11A0B5F9E00118FD0 /* GCGeocodingService.m in Sources */,
 				E879A4941A109C14006B8DC8 /* CustomInfoWindow.m in Sources */,
+				E8985A5A1A160985004845DF /* CustomMarker.m in Sources */,
 				E8B0C8C51A08E1BB00118FD0 /* ViewController.m in Sources */,
 				E8B0C8C21A08E1BB00118FD0 /* AppDelegate.m in Sources */,
 				E8985A571A160186004845DF /* Restaurants.m in Sources */,

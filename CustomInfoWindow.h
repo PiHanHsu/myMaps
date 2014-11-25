@@ -14,9 +14,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *starButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *commentButton;
+@property (assign, nonatomic) IBOutlet UIImageView *displayImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *displayLikeLabel;
 - (IBAction)likeButtonPressed:(id)sender;
 - (IBAction)statButtonPressed:(id)sender;
-
++ (UIImage *) imageWithView:(UIView *)view;
 @end

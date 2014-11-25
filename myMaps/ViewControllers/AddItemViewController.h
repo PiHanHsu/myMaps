@@ -13,5 +13,6 @@
 @property(nonatomic,strong) UIDynamicAnimator *animator;
 @property(nonatomic, strong) UIPanGestureRecognizer *gestureRecognizer;
 @property(nonatomic, strong) UISnapBehavior *snapBehavior;
+@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
 
 @end

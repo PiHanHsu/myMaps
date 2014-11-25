@@ -36,9 +36,9 @@
     [super viewWillAppear:animated];
     
     //Check if user is cached and linked to Facebook, if so, bypass login
-    if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
-    [self _ViewControllerAnimated:NO];
-   }
+    //if ([PFUser currentUser] && [PFFacebookUtils isLinkedWithUser:[PFUser currentUser]]) {
+    //[self _ViewControllerAnimated:YES];
+   //}
 }
 
 
@@ -90,8 +90,8 @@
 #pragma mark UserDetailsViewController
 
 - (void)_ViewControllerAnimated:(BOOL)animated {
-    //ViewController *searchViewController = [[ViewController alloc] init ];
-    //[self.navigationController pushViewController:searchViewController animated:animated];
+    ViewController *searchViewController = [[ViewController alloc] init ];
+    [self.navigationController pushViewController:searchViewController animated:animated];
 }
 
 @end

@@ -8,19 +8,33 @@
 
 #import "AddItemViewController.h"
 #import "CustomInfoWindow.h"
-
+#import "CustomMarker.h"
+#import <Parse/Parse.h>
 
 
 
 
 @implementation AddItemViewController
+
+
+
+
 - (IBAction)showInforPressed:(id)sender {
-      CustomInfoWindow *view =  [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
-    view.center=self.view.center;
-    view.nameLabel.text =@"Pihan";
-    //view.displayLikeLabel.text=@"Like!";
- 
-    [self.view addSubview:view];
+      CustomInfoWindow * customInfo =  [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    customInfo.center=self.view.center;
+    customInfo.nameLabel.text =@"Pihan";
+    
+    
+  
+    
+    
+    //CustomMarker *marker =[[[NSBundle mainBundle] loadNibNamed:@"CustomMarkerView" owner:self options:nil] objectAtIndex:0];
+    //CustomMarker *marker = [[UIView alloc]init];
+    
+    //marker.center = CGPointMake(100, 450);
+    
+    //[self.view addSubview:marker];
+    [self.view addSubview:customInfo];
 }
 
 @end

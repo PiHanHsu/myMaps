@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '7.0'
+
+
+
+pod 'AFNetworking', '~> 2.0'
+pod 'Google-Maps-iOS-SDK', '~> 1.8.1'
+pod 'Facebook-iOS-SDK', '~> 3.20.0'
+pod 'Parse', '~> 1.4.2'
+pod 'ParseFacebookUtils', '~>1.4.2'
+
